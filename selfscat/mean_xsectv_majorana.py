@@ -1,4 +1,4 @@
-from xsect_majorana_tch import xsect, xsectk2_part_wave
+from xsect_majorana_tch import xsect, xsectk2_part_wave, xsect_clas
 import numpy as np
 from scipy.special import roots_laguerre
 from xsect_sch import xsect_sch, xsect_intf, xsect_intf_part_wave
