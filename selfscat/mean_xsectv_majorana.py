@@ -37,7 +37,7 @@ def mean_xsectv(mX, mphi, alphaX, vmean, sign, minn=10, maxn=15,
     # First minn sampling
     nodes, weights = roots_laguerre(minn)
     integ_arr = list(map(lambda i: np.sqrt(8/np.pi)*v0*weights[i]*nodes[i]*xsect(mX, mphi, alphaX, np.sqrt(2*nodes[i])*v0, sign, *params), range(minn)))
-    integ = np.sum(integ_arr)
+    integ = sum(integ_arr)
 
     if maxn > minn:
         # add sampling points until convergence
@@ -49,7 +49,7 @@ def mean_xsectv(mX, mphi, alphaX, vmean, sign, minn=10, maxn=15,
             integ_old = integ
             integ_arr = list(map(lambda i: np.sqrt(8/np.pi)*v0*weights[i]*nodes[i]*xsect(mX, mphi, alphaX, np.sqrt(2*nodes[i])*v0, sign, *params), range(n)))
             
-            integ = np.sum(integ_arr)
+            integ = sum(integ_arr)
             integ_err = np.abs(integ-integ_old)/integ_old
 
             if integ_err < precision:
