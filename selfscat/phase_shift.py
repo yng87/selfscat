@@ -96,7 +96,7 @@ def phase_shift(a, b, l, sign,
         # Loop with increasing xf:
         for xf in xfs:
             dl_old = dl
-            dl, sol = phase_shift_fixed_range(a, b, l, sign, xi, xf, method, atol_ode, rtol_ode)
+            dl = phase_shift_fixed_range(a, b, l, sign, xi, xf, method, atol_ode, rtol_ode)
 
             # I found if xi is too small, calculation fails.
             if np.isnan(dl):
