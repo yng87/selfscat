@@ -80,9 +80,7 @@ def xsectk2_part_wave(a, b, sign, tol=1e-2, eval_L=2, max_L=260,
     xsectk2_arr = [0.5 * np.sin(delta_arr[0])**2*(legendre_integ(0,0) - legendre_integ(1,0))]
 
     L = 1
-    print(delta_arr)
     delta_arr.append(phase_shift(a, b, L, sign, *other_params))
-    print(delta_arr)
     xsectk2_arr.append(1.5*inside_sum(1, 1, delta_arr[1], delta_arr[1]))
 
     # xsectk2 = np.sum(xsectk2_arr)
